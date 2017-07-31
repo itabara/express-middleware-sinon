@@ -36,7 +36,7 @@ describe("middleware", function () {
         sandbox.restore();
     });
 
-    it("private URL invalid token gives status code 403", function (done) {
+    it("this private URL invalid token gives status code 403", function (done) {
     	privateUrls.push("/admin");
     	tokenValidator.validate.withArgs("token2").returns(false);
 
@@ -63,7 +63,7 @@ describe("middleware", function () {
             done();
         });
     });
- 
+
     it("public URL returns status code 200 without token", function (done) {
     	publicUrls.push("/main/");
     	req.url = "/main/"
